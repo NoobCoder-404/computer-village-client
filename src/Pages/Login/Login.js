@@ -2,10 +2,10 @@ import React from 'react';
 
 const Login = () => {
   return (
-    <div className="">
+    <div className="pt-24">
       <div className="p-8 lg:w-1/2 mx-auto">
         <div className="bg-gray-100 rounded-t-lg p-8">
-          <p className="text-center text-sm text-gray-400  font-bold">Sign in with</p>
+          <p className="text-center text-sm text-gray-600 font-light ">Sign in with</p>
           <div>
             <div className="flex items-center justify-center space-x-4 mt-3">
               <button className="flex items-center py-2 px-4 text-sm uppercase rounded bg-white hover:bg-gray-100 text-indigo-500 border border-transparent hover:border-transparent hover:text-gray-700 shadow-md hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
@@ -36,7 +36,7 @@ const Login = () => {
           </div>
         </div>
         <div className="bg-gray-100 rounded-b-lg py-12 px-4 lg:px-24">
-          <p className="text-center text-sm text-gray-500 font-light">
+          <p className="text-center text-sm text-gray-700   font-light">
             Or sign in with credentials
           </p>
           <form className="mt-6">

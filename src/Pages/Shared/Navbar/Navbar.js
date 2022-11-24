@@ -25,11 +25,11 @@ const Navbar = () => {
             <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
           </svg>
         </a>
-        <ul className="m-3 p-2 shadow-lg w-36 ">
-          <li className="bg-base-200">
+        <ul className="m-3 p-2 shadow-lg w-36 rounded-md">
+          <li className="bg-base-200 rounded-t-md">
             <a>Seller</a>
           </li>
-          <li className="bg-base-200">
+          <li className="bg-base-200 rounded-b-md">
             <a>Buyer</a>
           </li>
         </ul>
@@ -41,7 +41,7 @@ const Navbar = () => {
         <Link to={'/login'}>Login</Link>
       </li>
       <li>
-        <Link to={'SignUp'}> Register</Link>
+        <Link to={'/register'}> Register</Link>
       </li>
     </React.Fragment>
   );

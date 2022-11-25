@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import CategoryContainer from '../Categories/CategoryContainer/CategoryContainer';
 import Contact from '../Contact/Contact';
 
 const Home = () => {
@@ -7,6 +8,9 @@ const Home = () => {
     <div>
       <div>
         <Banner />
+      </div>
+      <div>
+        <CategoryContainer />
       </div>
       <div>
         <Contact />

@@ -1,104 +1,91 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
 const Contact = () => {
   return (
     <div>
-      <div className="container px-6 mx-auto">
-        <section className="mb-32 text-center text-black">
-          <div className="max-w-[700px] mx-auto px-3 lg:px-6">
-            <h2 className="text-3xl font-bold mb-12">Contact us</h2>
-            <form>
-              <div className="form-group mb-6">
-                <input
-                  type="text"
-                  className="form-control block
-            w-full
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
-            rounded
-            transition
-            ease-in-out
-            m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  id="exampleInput7"
-                  placeholder="Name"
-                />
-              </div>
-              <div className="form-group mb-6">
-                <input
-                  type="email"
-                  className="form-control block
-            w-full
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
-            rounded
-            transition
-            ease-in-out
-            m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  id="exampleInput8"
-                  placeholder="Email address"
-                />
-              </div>
-              <div className="form-group mb-6">
-                <textarea
-                  className="
-            form-control
+      <div className="w-full md:w-96 md:max-w-full mx-auto">
+        <div className="p-6 border border-gray-300 sm:rounded-md">
+          <form method="POST" action="https://herotofu.com/start">
+            <label className="block mb-6">
+              <span className="text-gray-700">Your name</span>
+              <input
+                type="text"
+                name="name"
+                className="
             block
             w-full
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
-            rounded
-            transition
-            ease-in-out
-            m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+            mt-1
+            border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
           "
-                  id="exampleFormControlTextarea13"
-                  rows="3"
-                  placeholder="Message"></textarea>
-              </div>
-
+                placeholder="Your Name"
+              />
+            </label>
+            <label className="block mb-6">
+              <span className="text-gray-700">Email address</span>
+              <input
+                name="email"
+                type="email"
+                className="
+            block
+            w-full
+            mt-1
+            border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                placeholder="samiul@example.com"
+                required
+              />
+            </label>
+            <label className="block mb-6">
+              <span className="text-gray-700">Message</span>
+              <textarea
+                name="message"
+                className="
+            block
+            w-full
+            mt-1
+            border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                rows="3"
+                placeholder="Tell us what you're thinking about..."></textarea>
+            </label>
+            <div className="mb-6 flex justify-center ">
               <button
                 type="submit"
                 className="
-          w-full
-          px-6
-          py-2.5
-          bg-slate-600
-          text-white
-          font-medium
-          text-xs
-          leading-tight
-          uppercase
-          rounded
-          shadow-md
-          hover:bg-slate-700 hover:shadow-lg
-          focus:bg-slate-600 focus:shadow-lg focus:outline-none focus:ring-0
-          active:bg-slate-800 active:shadow-lg
-          transition
-          duration-150
-          ease-in-out">
-                Send
+            h-10
+            px-5
+            text-indigo-100
+            bg-blue-700
+            rounded-lg
+            transition-colors
+            duration-150
+            focus:shadow-outline
+            hover:bg-blue-800
+          ">
+                Contact Us
               </button>
-            </form>
-          </div>
-        </section>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

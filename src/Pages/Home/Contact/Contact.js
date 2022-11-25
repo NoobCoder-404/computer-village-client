@@ -3,7 +3,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <div>
+    <div className="pt-24">
       <div className="w-full md:w-96 md:max-w-full mx-auto">
         <div className="p-6 border border-gray-300 sm:rounded-md">
           <form method="POST" action="https://herotofu.com/start">

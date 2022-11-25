@@ -1,0 +1,65 @@
+[
+  {
+    "category": "HP",
+    "title": "HP 15s-du1116TU Pentium",
+    "image": "https://www.startech.com.bd/image/cache/catalog/laptop/hp-laptop/15s-du1116tu/15s-du1116tu-01-500x500.jpg",
+    "original_price": 52000,
+    "resale_price": 22000,
+    "used": 1,
+    "rating": "64"
+  },
+  {
+    "category": "HP",
+    "title": "HP 250 G8 Core i3",
+    "image": "https://www.startech.com.bd/image/cache/catalog/laptop/hp-laptop/250-g8/250-g8-01-500x500.jpg",
+    "original_price": 52000,
+    "resale_price": 22000,
+    "used": 1,
+    "rating": "60"
+  },
+  {
+    "category": "DELL",
+    "title": "Dell Inspiron 15 3511",
+    "image": "https://www.startech.com.bd/image/cache/catalog/laptop/dell/latitude-14-3420/latitude-3420-01-500x500.jpg",
+    "original_price": 52000,
+    "resale_price": 22000,
+    "used": 1,
+    "rating": "43"
+  },
+  {
+    "category": "DELL",
+    "title": "Dell Inspiron 15 5515 ",
+    "image": "https://www.startech.com.bd/image/cache/catalog/laptop/dell/inspiron-15-5515/inspiron-15-5515-01-500x500.webp",
+    "original_price": 52000,
+    "resale_price": 22000,
+    "used": 1,
+    "rating": "49"
+  },
+  {
+    "category": "DELL",
+    "title": "Dell Vostro 14 3400",
+    "image": "https://www.startech.com.bd/image/cache/catalog/laptop/dell/14-3400/vostro-14-3400-black-side-500x500.jpg",
+    "original_price": 52000,
+    "resale_price": 22000,
+    "used": 1,
+    "rating": "50"
+  },
+  {
+    "category": "ACER",
+    "title": "Acer Aspire 3 A315-58",
+    "image": "https://www.startech.com.bd/image/cache/catalog/laptop/acer/aspire-3-a315-58/aspire-3-a315-58-001-500x500.jpg",
+    "original_price": 52000,
+    "resale_price": 22000,
+    "used": 1,
+    "rating": "50"
+  },
+  {
+    "category": "ACER",
+    "title": "Acer TravelMate TMP215-53",
+    "image": "https://www.startech.com.bd/image/cache/catalog/laptop/acer/travelmate-tmp215-53/travelmate-tmp215-53-01-500x500.jpg",
+    "original_price": 52000,
+    "resale_price": 22000,
+    "used": 1,
+    "rating": "50"
+  }
+]

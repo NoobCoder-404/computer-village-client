@@ -87,7 +87,7 @@ const AuthProvider = ({ children }) => {
     verifyEmail,
     signInWithGoogle,
     logout,
-    signin: login,
+    login,
     resetPassword,
     loading,
     setLoading

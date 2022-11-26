@@ -1,7 +1,72 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+/* eslint-disable no-unused-vars */
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
+  const { signInWithGoogle, createUser, updateUserProfile, setLoading } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+
+  const handleGoogleRegister = () => {
+    signInWithGoogle()
+      .then((result) => {
+        navigate(from, { replace: true });
+        toast.success('Google login Successfully');
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const image = form.image.files[0];
+    console.log(name, email, password, image);
+    const formData = new FormData();
+    formData.append('image', image);
+
+    const url = 'https://api.imgbb.com/1/upload?key=f6dccc02bb97f0fda749754094a7135b';
+
+    fetch(url, {
+      method: 'POST',
+      body: formData
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.data.display_url);
+        //console.log(formData);
+        createUser(email, password)
+          .then((result) => {
+            const user = result.user;
+            // setAuthToken(user);
+            console.log(user);
+            form.reset();
+            toast.success('User Created Successfully');
+
+            updateUserProfile(name, data.data.display_url)
+              .then(() => {
+                console.log('Profile Updated');
+              })
+              .catch((error) => console.error(error.message));
+          })
+          .catch((error) => console.error(error.message));
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error.message);
+        setLoading(false);
+      });
+  };
+
   return (
     <div className="mt-16">
       <section className=" dark:bg-gray-900">
@@ -11,7 +76,7 @@ const Register = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign up to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6" action="#">
                 <div>
                   <label
                     htmlFor="name"
@@ -100,6 +165,7 @@ const Register = () => {
                   Register
                 </button>
                 <button
+                  onClick={handleGoogleRegister}
                   type="submit"
                   className="w-full text-white bg-gray-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                   Register with Google

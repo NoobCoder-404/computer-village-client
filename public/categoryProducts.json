@@ -6,7 +6,8 @@
     "original_price": 52000,
     "resale_price": 22000,
     "used": 1,
-    "rating": "64"
+    "rating": "64",
+    "location": "Boalkhali"
   },
   {
     "category": "HP",
@@ -15,7 +16,8 @@
     "original_price": 52000,
     "resale_price": 22000,
     "used": 1,
-    "rating": "60"
+    "rating": "60",
+    "location": "Boalkhali"
   },
   {
     "category": "DELL",
@@ -24,7 +26,8 @@
     "original_price": 52000,
     "resale_price": 22000,
     "used": 1,
-    "rating": "43"
+    "rating": "43",
+    "location": "Boalkhali"
   },
   {
     "category": "DELL",
@@ -33,7 +36,8 @@
     "original_price": 52000,
     "resale_price": 22000,
     "used": 1,
-    "rating": "49"
+    "rating": "49",
+    "location": "Boalkhali"
   },
   {
     "category": "DELL",
@@ -42,7 +46,8 @@
     "original_price": 52000,
     "resale_price": 22000,
     "used": 1,
-    "rating": "50"
+    "rating": "50",
+    "location": "Boalkhali"
   },
   {
     "category": "ACER",
@@ -51,7 +56,8 @@
     "original_price": 52000,
     "resale_price": 22000,
     "used": 1,
-    "rating": "50"
+    "rating": "50",
+    "location": "Boalkhali"
   },
   {
     "category": "ACER",
@@ -60,6 +66,7 @@
     "original_price": 52000,
     "resale_price": 22000,
     "used": 1,
-    "rating": "50"
+    "rating": "50",
+    "location": "Boalkhali"
   }
 ]

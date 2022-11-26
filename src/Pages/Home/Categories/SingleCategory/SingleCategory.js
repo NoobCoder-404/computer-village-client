@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleCategory = ({ product }) => {
-  const { title, image, original_price, resale_price, used } = product;
+  const { _id, title, image } = product;
   return (
     <div className="card lg:w-96 bg-base-100 shadow-xl">
       <figure>
@@ -10,14 +11,11 @@ const SingleCategory = ({ product }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
-        <p>Original Price : ${original_price}</p>
-        <p>Resale Price : ${resale_price}</p>
-        <p>
-          Used : {used} {''}year
-        </p>
 
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <Link to={`/product/${_id}`}>
+            <button className="btn btn-primary">See Details</button>
+          </Link>
         </div>
       </div>
     </div>

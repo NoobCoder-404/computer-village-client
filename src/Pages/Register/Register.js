@@ -49,8 +49,8 @@ const Register = () => {
             const user = result.user;
             // setAuthToken(user);
             console.log(user);
-            form.reset();
             toast.success('User Created Successfully');
+            form.reset();
 
             updateUserProfile(name, data.data.display_url)
               .then(() => {

@@ -1,28 +1,22 @@
 /* eslint-disable no-unused-vars */
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import Loading from '../../../../Components/Loading/Loading';
 import Categories from '../Categories/Categories';
 import CategoryList from '../CategoryList/CategoryList';
 
 const CategoryContainer = () => {
   //const [products, setProducts] = useState([]);
-  const {
-    data: products = [],
-    refetch,
-    isLoading
-  } = useQuery({
-    queryKey: ['products'],
+  const [products, setProducts] = useState([]);
+  const { data: product = [], isLoading } = useQuery({
+    queryKey: ['product'],
     queryFn: async () => {
       const res = await fetch(`categoryProducts.json`);
       const data = await res.json();
+      setProducts(data);
       return data;
     }
   });
-
-  if (isLoading) {
-    return <Loading />;
-  }
 
   // useEffect(() => {
   //   fetch('categoryProducts.json')
@@ -30,19 +24,30 @@ const CategoryContainer = () => {
   //     .then((data) => setProducts(data));
   // }, []);
 
+  const allProducts = (product) => {
+    setProducts(product);
+  };
+
   const filterResult = (catItem) => {
     console.log(catItem);
-    const result = products.filter((product) => {
-      return product.category === catItem;
+    const result = product.filter((signleProduct) => {
+      const data = signleProduct.category === catItem;
+      return data;
     });
     console.log(result);
-    refetch;
-    // setProducts(result);
+    setProducts(result);
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="flex">
       <div>
-        <CategoryList filterResult={filterResult}></CategoryList>
+        <CategoryList
+          allProducts={allProducts}
+          product={product}
+          filterResult={filterResult}></CategoryList>
       </div>
       <div className="flex-1 ml-10 ">
         <Categories products={products}></Categories>

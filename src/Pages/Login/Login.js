@@ -9,6 +9,19 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then((result) => {
+        navigate(from, { replace: true });
+        toast.success('Google login Successfully');
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;

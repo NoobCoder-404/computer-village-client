@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
@@ -11,12 +12,13 @@ const CategoryContainer = () => {
   const { data: product = [], isLoading } = useQuery({
     queryKey: ['product'],
     queryFn: async () => {
-      const res = await fetch(`categoryProducts.json`);
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/products`);
       const data = await res.json();
       setProducts(data);
       return data;
     }
   });
+  console.log(process.env.REACT_APP_API_URL);
 
   // useEffect(() => {
   //   fetch('categoryProducts.json')
@@ -29,12 +31,12 @@ const CategoryContainer = () => {
   };
 
   const filterResult = (catItem) => {
-    console.log(catItem);
+    // console.log(catItem);
     const result = product.filter((signleProduct) => {
       const data = signleProduct.category === catItem;
       return data;
     });
-    console.log(result);
+    // console.log(result);
     setProducts(result);
   };
 
@@ -42,14 +44,14 @@ const CategoryContainer = () => {
     return <Loading />;
   }
   return (
-    <div className="flex">
+    <div className="lg:flex">
       <div>
         <CategoryList
           allProducts={allProducts}
           product={product}
           filterResult={filterResult}></CategoryList>
       </div>
-      <div className="flex-1 ml-10 ">
+      <div className="flex-1 lg:ml-10 ">
         <Categories products={products}></Categories>
       </div>
     </div>

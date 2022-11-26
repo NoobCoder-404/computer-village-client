@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const CategoryList = ({ filterResult, product, allProducts }) => {
   return (
-    <div className="px-10 grid shadow-lg p-5 rounded-xl">
-      <h1 className="text-xl font-bold pb-3">Category list</h1>
+    <div className="px-10 grid shadow-lg p-5 rounded-xl mb-5">
+      <h1 className="text-xl font-bold pb-3 text-center">Category list</h1>
       <Link>
         <button onClick={() => allProducts(product)} className="btn btn-ghost w-full">
           All

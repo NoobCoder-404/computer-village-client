@@ -1,7 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
+  const { signInWithGoogle, login } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    login(email, password)
+      .then((result) => {
+        toast.success('Login Successfully');
+        form.reset();
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        console.error(error.message);
+      });
+  };
+
   return (
     <div className="pt-24">
       <section className=" dark:bg-gray-900">

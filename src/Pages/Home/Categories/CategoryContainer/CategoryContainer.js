@@ -7,7 +7,6 @@ import Categories from '../Categories/Categories';
 import CategoryList from '../CategoryList/CategoryList';
 
 const CategoryContainer = () => {
-  //const [products, setProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const { data: product = [], isLoading } = useQuery({
     queryKey: ['product'],
@@ -18,13 +17,6 @@ const CategoryContainer = () => {
       return data;
     }
   });
-  console.log(process.env.REACT_APP_API_URL);
-
-  // useEffect(() => {
-  //   fetch('categoryProducts.json')
-  //     .then((res) => res.json())
-  //     .then((data) => setProducts(data));
-  // }, []);
 
   const allProducts = (product) => {
     setProducts(product);

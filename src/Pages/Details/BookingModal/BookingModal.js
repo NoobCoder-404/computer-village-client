@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider';
 
-const BookingModal = () => {
+const BookingModal = ({ title, resale_price }) => {
   const { user } = useContext(AuthContext);
   const handleBooking = () => {};
+
   return (
     <div>
       <input type="checkbox" id="booking-modal" className="modal-toggle" />
@@ -20,13 +22,7 @@ const BookingModal = () => {
               placeholder="Full Name"
               className="input  border-slate-400 w-full"
               defaultValue={user?.displayName}
-            />
-
-            <input
-              name="phone"
-              type="number"
-              placeholder="Phone Number"
-              className="input border-slate-400 w-full"
+              disabled
             />
             <input
               name="email"
@@ -41,21 +37,27 @@ const BookingModal = () => {
               type="text"
               placeholder=""
               className="input   border-slate-400 w-full"
-              defaultValue={user?.email}
+              defaultValue={title}
               disabled
             />
             <input
-              name="item"
+              name="price"
               type="text"
               placeholder=""
               className="input   border-slate-400 w-full"
-              defaultValue={user?.email}
+              defaultValue={resale_price}
               disabled
             />
             <input
               name="phone"
               type="number"
               placeholder="Phone Number"
+              className="input border-slate-400 w-full"
+            />
+            <input
+              name="location"
+              type="text"
+              placeholder="Location"
               className="input border-slate-400 w-full"
             />
             <input className="w-full btn btn-neutral mb-10" type="submit" value="Submit" />

@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import BookingModal from './BookingModal/BookingModal';
 
-const CheckOut = () => {
+const Details = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
   const { title, image, original_price, resale_price, used } = useLoaderData();
@@ -26,12 +26,12 @@ const CheckOut = () => {
             <p className="pb-3">Resale Price : ${resale_price}</p>
 
             <div className="card-actions justify-start mt-3">
-              <button className="btn btn-primary">Buy Now</button>
+              <label htmlFor="booking-modal" className="btn btn-primary">
+                Buy now
+              </label>
             </div>
-            <label htmlFor="booking-modal" className="btn">
-              open modal
-            </label>
-            <BookingModal />
+
+            {user && <BookingModal title={title} resale_price={resale_price} />}
           </div>
         </div>
       </div>
@@ -62,4 +62,4 @@ const CheckOut = () => {
   );
 };
 
-export default CheckOut;
+export default Details;

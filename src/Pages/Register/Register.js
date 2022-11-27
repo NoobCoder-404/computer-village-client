@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
@@ -34,7 +35,8 @@ const Register = () => {
     const formData = new FormData();
     formData.append('image', image);
 
-    const url = 'https://api.imgbb.com/1/upload?key=f6dccc02bb97f0fda749754094a7135b';
+    const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_KEY}`;
+    console.log(url);
 
     fetch(url, {
       method: 'POST',

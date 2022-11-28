@@ -45,6 +45,7 @@ const Details = () => {
                 resale_price={resale_price}
                 setCurrentUser={setCurrentUser}
                 setSelected={setSelected}
+                image={image}
               />
             )}
           </div>

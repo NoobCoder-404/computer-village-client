@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../../Layouts/Main/Main';
 import Cart from '../../Pages/Cart/Cart';
@@ -50,7 +51,7 @@ export const router = createBrowserRouter([
             <Details />
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => fetch(`${process.env.REACT_APP_API_URL}/product/${params.id}`)
       }
     ]
   }

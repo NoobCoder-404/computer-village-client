@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
 
-const BookingModal = ({ title, resale_price, setCurrentUser, setSelected }) => {
+const BookingModal = ({ title, image, resale_price, setCurrentUser, setSelected }) => {
   const { user } = useContext(AuthContext);
   const handleBooking = (event) => {
     event.preventDefault();
@@ -16,22 +16,23 @@ const BookingModal = ({ title, resale_price, setCurrentUser, setSelected }) => {
     const phone = form.phone.value;
     const location = form.location.value;
     console.log(name, email, item, price, phone, location);
-    const booking = {
+    const order = {
       name,
       email,
       item,
       price,
       phone,
       location,
+      image,
       date: setSelected
     };
-    console.log(booking);
-    fetch(`${process.env.REACT_APP_API_URL}/bookings`, {
+    console.log(order);
+    fetch(`${process.env.REACT_APP_API_URL}/orders`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify(booking)
+      body: JSON.stringify(order)
     })
       .then((res) => res.json())
       .then((data) => {

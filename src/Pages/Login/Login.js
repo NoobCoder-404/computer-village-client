@@ -13,11 +13,11 @@ const Login = () => {
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then((result) => {
-        navigate(from, { replace: true });
-        toast.success('Google login Successfully');
         const user = result.user;
         setAuthToken(user);
         console.log(user);
+        navigate(from, { replace: true });
+        toast.success('Google login Successfully');
       })
       .catch((error) => {
         toast.error(error.message);
@@ -32,11 +32,10 @@ const Login = () => {
     console.log(email, password);
     login(email, password)
       .then((result) => {
-        toast.success('Login Successfully');
         const user = result.user;
         form.reset();
         setAuthToken(user);
-
+        toast.success('Login Successfully');
         console.log(user);
         navigate(from, { replace: true });
       })

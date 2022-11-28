@@ -14,6 +14,15 @@ const BookingModal = ({ title, resale_price, setCurrentUser }) => {
     const phone = form.phone.value;
     const location = form.location.value;
     console.log(name, email, item, price, phone, location);
+    const booking = {
+      name,
+      email,
+      item,
+      price,
+      phone,
+      location
+    };
+    console.log(booking);
     setCurrentUser(null);
   };
 

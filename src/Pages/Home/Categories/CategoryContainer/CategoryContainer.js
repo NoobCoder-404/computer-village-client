@@ -8,7 +8,11 @@ import CategoryList from '../CategoryList/CategoryList';
 
 const CategoryContainer = () => {
   const [products, setProducts] = useState([]);
-  const { data: product = [], isLoading } = useQuery({
+  const {
+    data: product = [],
+    isLoading,
+    refetch
+  } = useQuery({
     queryKey: ['product'],
     queryFn: async () => {
       const res = await fetch(`${process.env.REACT_APP_API_URL}/products`);
@@ -29,7 +33,9 @@ const CategoryContainer = () => {
       return data;
     });
     // console.log(result);
+
     setProducts(result);
+    refetch;
   };
 
   if (isLoading) {

@@ -27,7 +27,10 @@ const Details = () => {
             <p className="pb-3">Resale Price : ${resale_price}</p>
 
             <div className="card-actions justify-start mt-3">
-              <label htmlFor="booking-modal" className="btn btn-primary">
+              <label
+                onClick={() => setCurrentUser(user)}
+                htmlFor="booking-modal"
+                className="btn btn-primary">
                 Buy now
               </label>
             </div>

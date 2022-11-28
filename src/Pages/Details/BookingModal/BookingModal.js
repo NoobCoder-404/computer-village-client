@@ -1,5 +1,7 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const BookingModal = ({ title, resale_price, setCurrentUser }) => {
@@ -23,7 +25,21 @@ const BookingModal = ({ title, resale_price, setCurrentUser }) => {
       location
     };
     console.log(booking);
-    setCurrentUser(null);
+    fetch(`${process.env.REACT_APP_API_URL}/bookings`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(booking)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          setCurrentUser(null);
+          toast.success('Booking Confirmed');
+        }
+      });
   };
 
   return (
@@ -73,12 +89,14 @@ const BookingModal = ({ title, resale_price, setCurrentUser }) => {
               type="number"
               placeholder="Phone Number"
               className="input border-slate-400 w-full"
+              required
             />
             <input
               name="location"
               type="text"
               placeholder="Location"
               className="input border-slate-400 w-full"
+              required
             />
             <input className="w-full btn btn-neutral mb-10" type="submit" value="Submit" />
           </form>

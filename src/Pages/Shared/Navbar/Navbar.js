@@ -22,9 +22,7 @@ const Navbar = () => {
       <li>
         <Link to={'/products'}>Products</Link>
       </li>
-      <li>
-        <Link to={'/cart'}>Cart</Link>
-      </li>
+
       <li tabIndex={0}>
         <a className="justify-between">
           User
@@ -49,6 +47,9 @@ const Navbar = () => {
 
       {user ? (
         <>
+          <li>
+            <Link to={'/cart'}>Cart</Link>
+          </li>
           <li onClick={handleLogout}>
             <Link>Log Out</Link>
           </li>

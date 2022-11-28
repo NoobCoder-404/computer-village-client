@@ -27,7 +27,7 @@ const Details = () => {
             <p className="pb-3">
               Used : {used} {''}year
             </p>
-            <p className="pb-3">Location : ${location}</p>
+            <p className="pb-3">Location : {location}</p>
             <p className="pb-3">Date {format(selected, 'PP')}.</p>
 
             <div className="card-actions justify-start mt-3">

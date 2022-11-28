@@ -21,7 +21,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.error(error.message);
-        toast.error(error.message);
+        // toast.error(error.message);
       });
   };
 
@@ -41,7 +41,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        toast.error(error.message);
+        //toast.error(error.message);
         console.error(error.message);
       });
   };

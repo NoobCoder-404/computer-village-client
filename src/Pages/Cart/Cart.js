@@ -18,7 +18,7 @@ const Cart = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure, you want to cancel this order');
     if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`${process.env.REACT_APP_API_URL}/orders/${id}`, {
         method: 'DELETE'
       })
         .then((res) => res.json())

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { setAuthToken } from '../../api/auth';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
@@ -15,6 +16,7 @@ const Login = () => {
         navigate(from, { replace: true });
         toast.success('Google login Successfully');
         const user = result.user;
+        setAuthToken(user);
         console.log(user);
       })
       .catch((error) => {
@@ -31,8 +33,10 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         toast.success('Login Successfully');
-        form.reset();
         const user = result.user;
+        form.reset();
+        setAuthToken(user);
+
         console.log(user);
         navigate(from, { replace: true });
       })

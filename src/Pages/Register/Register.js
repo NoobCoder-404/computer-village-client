@@ -3,6 +3,7 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { setAuthToken } from '../../api/auth';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
@@ -18,6 +19,7 @@ const Register = () => {
         toast.success('Google login Successfully');
         const user = result.user;
         console.log(user);
+        setAuthToken(user);
       })
       .catch((error) => {
         toast.error(error.message);
@@ -49,7 +51,7 @@ const Register = () => {
         createUser(email, password)
           .then((result) => {
             const user = result.user;
-            // setAuthToken(user);
+            setAuthToken(user);
             console.log(user);
             toast.success('User Created Successfully');
             form.reset();

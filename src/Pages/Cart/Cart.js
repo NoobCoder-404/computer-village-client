@@ -14,6 +14,9 @@ const Cart = () => {
       .then((data) => setOrder(data));
   }, [user?.email]);
 
+  const handleDelete = () => {};
+
+  const handleStatusUpdate = () => {};
   return (
     <div>
       <h2 className="text-5xl">You have {orders.length} Orders</h2>
@@ -22,10 +25,10 @@ const Cart = () => {
           <thead>
             <tr>
               <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Location</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>

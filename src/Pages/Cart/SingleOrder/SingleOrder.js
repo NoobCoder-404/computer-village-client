@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-const SingleOrder = () => {
+// eslint-disable-next-line no-unused-vars
+const SingleOrder = ({ order, handleDelete, handleStatusUpdate }) => {
   return <div></div>;
 };
 

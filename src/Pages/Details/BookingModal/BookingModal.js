@@ -2,9 +2,20 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider';
 
-const BookingModal = ({ title, resale_price }) => {
+const BookingModal = ({ title, resale_price, setCurrentUser }) => {
   const { user } = useContext(AuthContext);
-  const handleBooking = () => {};
+  const handleBooking = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const item = form.item.value;
+    const price = form.price.value;
+    const phone = form.phone.value;
+    const location = form.location.value;
+    console.log(name, email, item, price, phone, location);
+    setCurrentUser(null);
+  };
 
   return (
     <div>

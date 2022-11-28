@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import BookingModal from './BookingModal/BookingModal';
@@ -7,6 +7,7 @@ const Details = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
   const { title, image, original_price, resale_price, used } = useLoaderData();
+  const [currentUser, setCurrentUser] = useState(user);
 
   return (
     <div className="lg:flex justify-center items-center lg:mt-16 p-5">
@@ -31,34 +32,17 @@ const Details = () => {
               </label>
             </div>
 
-            {user && <BookingModal title={title} resale_price={resale_price} />}
+            {user && currentUser && (
+              <BookingModal
+                title={title}
+                resale_price={resale_price}
+                setCurrentUser={setCurrentUser}
+              />
+            )}
           </div>
         </div>
       </div>
     </div>
-
-    // <div className="lg:flex justify-center mt-20">
-    //   <div className="card card-side lg:w-2/3 bg-base-100 shadow-xl ">
-    //     <figure>
-    //       <img src={image} alt="Movie" />
-    //     </figure>
-    //     <div className="card-body lg:flex justify-center items-center">
-    //       <div>
-    //         <h2 className="card-title pb-3">{title}</h2>
-    //         <p className="pb-3">Original Price : ${original_price}</p>
-    //         <p className="pb-3">Resale Price : ${resale_price}</p>
-    //         <p className="pb-3">
-    //           Used : {used} {''}year
-    //         </p>
-    //         <p className="pb-3">Resale Price : ${resale_price}</p>
-    //         <p className="pb-3">Resale Price : ${resale_price}</p>
-    //         <div className="card-actions justify-start pt-5">
-    //           <button className="btn btn-primary">Buy Now</button>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 

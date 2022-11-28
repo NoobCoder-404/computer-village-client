@@ -42,15 +42,18 @@ const CategoryContainer = () => {
     return <Loading />;
   }
   return (
-    <div className="lg:flex mt-24">
-      <div>
-        <CategoryList
-          allProducts={allProducts}
-          product={product}
-          filterResult={filterResult}></CategoryList>
-      </div>
-      <div className="flex-1 lg:ml-10 ">
-        <Categories products={products}></Categories>
+    <div>
+      <h1 className="text-4xl font-bold text-center mt-20 pb-10">Products</h1>
+      <div className="lg:flex ">
+        <div>
+          <CategoryList
+            allProducts={allProducts}
+            product={product}
+            filterResult={filterResult}></CategoryList>
+        </div>
+        <div className="flex-1 lg:ml-10 ">
+          <Categories products={products}></Categories>
+        </div>
       </div>
     </div>
   );

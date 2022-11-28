@@ -4,7 +4,7 @@ import React from 'react';
 const Contact = () => {
   return (
     <div className="pt-24">
-      <h1 className="text-center text-2xl font-bold pb-10">Contact us</h1>
+      <h1 className="text-center text-4xl font-bold pb-10">Contact us</h1>
       <div className="w-full md:w-96 md:max-w-full mx-auto">
         <div className="p-6 border border-gray-300 sm:rounded-md">
           <form method="POST" action="https://herotofu.com/start">

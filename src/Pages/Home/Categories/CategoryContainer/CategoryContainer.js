@@ -42,7 +42,7 @@ const CategoryContainer = () => {
     return <Loading />;
   }
   return (
-    <div className="lg:flex">
+    <div className="lg:flex mt-24">
       <div>
         <CategoryList
           allProducts={allProducts}

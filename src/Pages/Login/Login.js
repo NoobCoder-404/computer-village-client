@@ -20,6 +20,7 @@ const Login = () => {
         toast.success('Google login Successfully');
       })
       .catch((error) => {
+        console.error(error.message);
         toast.error(error.message);
       });
   };

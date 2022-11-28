@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
 
-const BookingModal = ({ title, resale_price, setCurrentUser }) => {
+const BookingModal = ({ title, resale_price, setCurrentUser, setSelected }) => {
   const { user } = useContext(AuthContext);
   const handleBooking = (event) => {
     event.preventDefault();
@@ -22,7 +22,8 @@ const BookingModal = ({ title, resale_price, setCurrentUser }) => {
       item,
       price,
       phone,
-      location
+      location,
+      date: setSelected
     };
     console.log(booking);
     fetch(`${process.env.REACT_APP_API_URL}/bookings`, {
